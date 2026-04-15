@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15號雜貨店 | No.15 Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- 基礎設定 --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { 
+            font-family: 'Noto Serif TC', serif; 
+            line-height: 1.8; 
+            background-color: #FAF9F6; 
+            color: #333; 
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- 導覽列 --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px); /* 毛玻璃效果 */
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 3px; color: #8D775F; }
+        .nav-links a { margin-left: 25px; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; transition: 0.3s; }
+        .nav-links a:hover { color: #8D775F; }
+
+        /* --- 通用區塊樣式 --- */
+        section { padding: 100px 10%; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; }
+        .section-title { font-size: 2rem; margin-bottom: 40px; text-align: center; position: relative; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: #8D775F; margin: 15px auto; }
+
+        /* --- 首頁 Banner --- */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=2067') no-repeat center/cover;
+            color: white; text-align: center; justify-content: center;
+        }
+        #home h1 { font-size: 3.5rem; letter-spacing: 5px; margin-bottom: 10px; }
+        #home p { font-size: 1.2rem; font-family: 'Montserrat', sans-serif; font-weight: 300; }
+        .cta-btn {
+            margin-top: 30px; padding: 15px 40px;
+            background: white; color: #333; border: none;
+            font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .cta-btn:hover { background: #8D775F; color: white; transform: translateY(-3px); }
+
+        /* --- 商品頁 --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: white; padding: 20px; text-align: center;
+            transition: 0.4s; border: 1px solid #eee;
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .product-img { width: 100%; height: 250px; background: #f0f0f0; margin-bottom: 15px; overflow: hidden; }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        .price { color: #8D775F; font-weight: bold; margin-top: 10px; }
+
+        /* --- 關於我們 --- */
+        .about-content {
+            display: flex; align-items: center; gap: 60px; flex-wrap: wrap;
+        }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-image { 
+            flex: 1; min-width: 300px; height: 450px; 
+            background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070') center/cover;
+            border-radius: 5px;
+        }
+
+        /* --- 聯絡我們 --- */
+        #contact { background: #f4f2ee; text-align: center; }
+        .contact-info { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; }
+        .contact-item { margin: 15px 0; }
+
+        footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #999; border-top: 1px solid #eee; }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            #home h1 { font-size: 2.5rem; }
+            nav { padding: 15px 5%; }
+            .nav-links { display: none; } /* 手機端建議改為漢堡選單 */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NO. 15 STORE</div>
+        <div class="nav-links">
+            <a href="#home">首頁</a>
+            <a href="#products">精選商品</a>
+            <a href="#about">品牌故事</a>
+            <a href="#contact">聯絡我們</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <h1>15號雜貨店</h1>
+        <p>SIMPLE LIFE, REFINED DESIGN</p>
+        <div>
+            <a href="#products"><button class="cta-btn">立即探索</button></a>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 class="section-title">精選商品</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="https://i.postimg.cc/XXwbNcxy/1773383613693.jpg" alt="商品"></div>
+                <h3>青春保濕金罐罐</h3>
+                <p>15號經典系列 | 凍齡18歲</p>
+                <div class="price">NT$ 7,899</div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://i.postimg.cc/DfpmN2tB/1773383619444.jpg" alt="商品"></div>
+                <h3>美味麵堡</h3>
+                <p>極簡工藝 | 展現橡膠的純粹口感</p>
+                <div class="price">NT$ 1,280</div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://i.postimg.cc/D8kYZ9m5/1773383161871.jpg" alt="商品"></div>
+                <h3>喜馬拉雅玻璃杯</h3>
+                <p>冠軍時刻 | 一口置身巔峰</p>
+                <div class="price">NT$ 5999</div>
+            </div>
+        </div>
+    </section>
+
+<section id="about">
+
+    <h2 class="section-title">品牌故事</h2>
+
+    <div class="about-content">
+
+        <div class="about-image-box">
+
+            <img src="https://i.postimg.cc/Pvzs6TN6/IMG-0058.jpg" 
+
+                 alt="設計師童家圓" 
+
+                 style="width: 100%; height: auto; border-radius: 5px;">
+
+        </div>
+            
+            <div class="about-text">
+                <p><strong>15號雜貨店</strong>誕生於 2026 年，由設計師<strong>童家圓</strong>創立。</p>
+                <br>
+                <p>在光復高中求學期間，她深受台式生活美學啟發——相信平價好物也能有和精品一樣的使用效果。後續她以班級座號為理念，將生活的簡單與精品的功能融為一體。</p>
+                <br>
+                <p>每一件作品都經歷嚴格的選材與手工製程，從金屬的觸感到香氛的餘韻，每個細節都是對美好生活的致敬。</p>
+                <br>
+                <p style="font-style: italic; color: #8D775F; border-left: 3px solid #8D775F; padding-left: 15px; margin-top: 20px;">
+                    「我相信每個人都值得擁有美好的日常。15號不只是座號，更是一種生活態度——簡單、真實、有溫度。」
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">聯絡我們</h2>
+        <div class="contact-info">
+            <div class="contact-item"><strong>Email:</strong> cj103251@apps.ntpc.edu.tw</div>
+            <div class="contact-item"><strong>Phone:</strong> +886-123-456-789</div>
+            <div class="contact-item"><strong>Address:</strong> 新北市立光復高中</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 15號雜貨店 No.15 Store. Designed by 童家圓</p>
+    </footer>
+
+</body>
+</html>
